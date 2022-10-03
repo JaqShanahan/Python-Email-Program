@@ -1,9 +1,9 @@
+# MADE BY SITI
 from email import message
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-from keyboard import send
 
 # your email goes here
 sender_email = "youremail@gmail.com"
@@ -29,6 +29,24 @@ while loop == True:
   receiver_email = input("Who would you like to send an email to? ")
   # your email password
   password = "yourpassword"
+  
+  # enter in your first name
+  first_name = "firstname"
+  # enter your ful name i.e "John Doe"
+  full_name = "firstname lastname"
+  
+  #enter in your phone number
+  phone_number = "phone number"
+  #enter location i.e "Adelaide, Australia"
+  location = "location"
+  
+  # enter the image url you want to be the image header
+  email_image_header = "https://www.imageurl.com/"
+  
+  # enter your socail url
+  facebookURL = "http://www.facebook.com/"
+  instagramURL = "http://www.instagram.com/"
+  linkedinURL = "http://www.linkedin.com/"
 
   message = MIMEMultipart("alternative")
   message["Subject"] = input("What is the subject of the email? ")
@@ -143,7 +161,7 @@ while loop == True:
                             <table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
                               <tr>
                                 <td class="pad" style="width:100%;padding-right:0px;padding-left:0px;">
-                                  <div class="alignment" align="center" style="line-height:10px"><img class="big" src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/BeeProAgency/877944_862119/editor_images/63e0b0b2-42c0-436a-94f3-35d72c9993cb.png" style="display: block; height: auto; border: 0; width: 500px; max-width: 100%;" width="500"></div>
+                                  <div class="alignment" align="center" style="line-height:10px"><img class="big" src='""" + f"{email_image_header}" + """' style="display: block; height: auto; border: 0; width: 500px; max-width: 100%;" width="500"></div>
                                 </td>
                               </tr>
                             </table>
@@ -155,7 +173,7 @@ while loop == True:
       <td>
         <h2 style="text-align:left">""" + f"{title_text}" + """</h2>
         <p style="text-align:left">
-          """ + f"{body_text}" + """<br /><br />Sincerely,<br />Jaq
+          """ + f"{body_text}" + """<br /><br />Sincerely,<br />""" + f"{first_name}" + """
         </p>
       </td>
     </tr>
@@ -170,10 +188,10 @@ while loop == True:
     <tr>
       <td align="center" style="padding:30px 30px">
 
-        <h3>Jaq Shanahan</h3> 
+        <h3>""" + f"{full_name}" + """</h3> 
         <p style="margin-top:-10px">
-          +61413363945<br />
-          Adelaide, Australia
+          """ + f"{phone_number}" + """<br />
+          """ + f"{location}" + """Adelaide, Australia
 
         </p>
 
@@ -192,9 +210,9 @@ while loop == True:
                                   <div class="alignment" style="text-align:center;">
                                     <table class="social-table" width="126px" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: inline-block;">
                                       <tr>
-                                        <td style="padding:0 5px 0 5px;"><a href="https://www.facebook.com/Jaq.Lloyd" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/facebook@2x.png" width="32" height="32" alt="Facebook" title="facebook" style="display: block; height: auto; border: 0;"></a></td>
-                                        <td style="padding:0 5px 0 5px;"><a href="https://www.linkedin.com/in/jaq-shanahan-a327ba21a/" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/linkedin@2x.png" width="32" height="32" alt="Linkedin" title="linkedin" style="display: block; height: auto; border: 0;"></a></td>
-                                        <td style="padding:0 5px 0 5px;"><a href="https://www.instagram.com/jaqshanahan/" target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/instagram@2x.png" width="32" height="32" alt="Instagram" title="instagram" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 5px 0 5px;"><a href='""" + f"{facebookURL}" + """' target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/facebook@2x.png" width="32" height="32" alt="Facebook" title="facebook" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 5px 0 5px;"><a href='""" + f"{linkedinURL}" + """' target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/linkedin@2x.png" width="32" height="32" alt="Linkedin" title="linkedin" style="display: block; height: auto; border: 0;"></a></td>
+                                        <td style="padding:0 5px 0 5px;"><a href='""" + f"{instagramURL}" + """' target="_blank"><img src="https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-only-logo-dark-gray/instagram@2x.png" width="32" height="32" alt="Instagram" title="instagram" style="display: block; height: auto; border: 0;"></a></td>
                                       </tr>
                                     </table>
                                   </div>
